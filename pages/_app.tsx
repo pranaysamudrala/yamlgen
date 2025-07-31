@@ -1,13 +1,12 @@
 import type { AppProps } from "next/app";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
-import { useMemo } from "react";
 
 const theme = createTheme({
   palette: {
     mode: "dark",
-    background: { default: "#0f0f0f", paper: "#1e1e1e" },
+    background: { default: "#0a0a0a", paper: "#1e1e1e" },
     text: { primary: "#f5f5f5" },
-    primary: { main: "#1976d2" },
+    primary: { main: "#ffffff" },
     success: { main: "#2e7d32" },
     error: { main: "#c62828" }
   },
@@ -15,10 +14,30 @@ const theme = createTheme({
     fontFamily: "system-ui,-apple-system,BlinkMacSystemFont,sans-serif"
   },
   components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          backgroundColor: "#ffffff",
+          color: "#000",
+          fontWeight: 600,
+          "&:hover": {
+            backgroundColor: "#e6e6e6"
+          }
+        },
+        outlined: {
+          borderColor: "#fff",
+          color: "#fff",
+          fontWeight: 600,
+          "&:hover": {
+            background: "rgba(255,255,255,0.08)"
+          }
+        }
+      }
+    },
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundColor: "#1e1e1e"
+          backgroundColor: "#0f0f0f"
         }
       }
     }
